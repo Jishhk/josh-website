@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Create a New Page</h1>
+<form method="post">
+	<label>
+        <span>Page Title:</span>
+        <input type="text" name="title" value="{{title}}" class="text" />
+        <div class="error">{{title_error}}</div>
+    </label>
+
+    <label>
+        <span>Url:</span>
+        <input type="text" name="url" value="{{url}}" class="text" />
+        <div class="error">{{url_error}}</div>
+    </label>
+
+    <label>
+        <span>Page Content:</span>
+        <textarea name="content">{{content|escape}}</textarea>
+        <div class="error">{{content_error}}</div>
+    </label>
+	
+	<input type="submit" value="Save" />
+
+</form>
+{% endblock %}

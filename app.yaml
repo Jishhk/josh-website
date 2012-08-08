@@ -1,0 +1,42 @@
+application: josh-temp
+version: 0-2
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+
+# static files
+- url: /favicon\.ico
+  static_files: app/static/img/favicon.ico
+  upload: app/static/img/favicon\.ico
+
+- url: /robots.txt
+  static_files: app/static/doc/robots.txt
+  upload: app/static/img/robots.txt
+
+- url: /css
+  static_dir: app/static/css
+
+- url: /js
+  static_dir: app/static/js
+
+- url: /img
+  static_dir: app/static/img
+
+- url: /doc
+  static_dir: app/doc
+
+# all other urls
+- url: .*
+  script: application.app
+
+
+
+
+libraries:
+- name: webapp2
+  version: "2.5.1"
+
+- name: jinja2
+  version: "2.6"
